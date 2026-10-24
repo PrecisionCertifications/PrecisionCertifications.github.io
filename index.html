@@ -249,26 +249,26 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <div style="display: flex; flex-wrap: wrap; gap: 18px">
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="q-name" style="font-weight: 600; font-size: 15px">Your name</label>
-<input id="q-name" type="text" autocomplete="name" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<input id="q-name" name="Name" type="text" autocomplete="name" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="q-company" style="font-weight: 600; font-size: 15px">Company (optional)</label>
-<input id="q-company" type="text" autocomplete="organization" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<input id="q-company" name="Company" type="text" autocomplete="organization" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 18px">
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="q-email" style="font-weight: 600; font-size: 15px">Email</label>
-<input id="q-email" type="email" autocomplete="email" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<input id="q-email" name="email" type="email" autocomplete="email" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="q-students" style="font-weight: 600; font-size: 15px">Number of students</label>
-<input id="q-students" type="number" min="1" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<input id="q-students" name="Number of students" type="number" min="1" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="q-program" style="font-weight: 600; font-size: 15px">Program</label>
-<select id="q-program" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<select id="q-program" name="Program" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 <option>IPC-A-610</option>
 <option>IPC J-STD-001</option>
 <option>IPC/WHMA-A-620</option>
@@ -282,10 +282,11 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="q-notes" style="font-weight: 600; font-size: 15px">Location and preferred dates</label>
-<textarea id="q-notes" rows="4" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; box-sizing: border-box; width: 100%; resize: vertical"></textarea>
+<textarea id="q-notes" name="Location and preferred dates" rows="4" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; box-sizing: border-box; width: 100%; resize: vertical"></textarea>
 </div>
 <button type="submit" style="font: inherit; font-weight: 600; color: #FFFFFF; background: #2350A8; border: 0; padding: 15px 26px; border-radius: 4px; align-self: flex-start; cursor: pointer; min-height: 48px">Send request</button>
-<p class="form-note" style="margin: 0; font-size: 14px; color: #47595C">Clicking Send opens your email app with your request filled in. Just press send. No email app? Write to PrecisionCertifications@gmail.com.</p>
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<p class="form-status" role="status" aria-live="polite" style="margin: 0; font-size: 15px; font-weight: 600"></p>
 </form>
 </div>
 </section>
@@ -305,27 +306,27 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <div style="display: flex; flex-wrap: wrap; gap: 18px">
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="i-name" style="font-weight: 600; font-size: 15px">Your name</label>
-<input id="i-name" type="text" autocomplete="name" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<input id="i-name" name="Name" type="text" autocomplete="name" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="i-email" style="font-weight: 600; font-size: 15px">Email</label>
-<input id="i-email" type="email" autocomplete="email" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<input id="i-email" name="email" type="email" autocomplete="email" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 18px">
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="i-phone" style="font-weight: 600; font-size: 15px">Phone (optional)</label>
-<input id="i-phone" type="tel" autocomplete="tel" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<input id="i-phone" name="Phone" type="tel" autocomplete="tel" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="i-location" style="font-weight: 600; font-size: 15px">City and state</label>
-<input id="i-location" type="text" autocomplete="address-level2" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<input id="i-location" name="City and state" type="text" autocomplete="address-level2" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 18px">
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="i-program" style="font-weight: 600; font-size: 15px">Class</label>
-<select id="i-program" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<select id="i-program" name="Class" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 <option>IPC-A-610</option>
 <option>IPC J-STD-001</option>
 <option>IPC/WHMA-A-620</option>
@@ -339,7 +340,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 </div>
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <label for="i-type" style="font-weight: 600; font-size: 15px">Certification type</label>
-<select id="i-type" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<select id="i-type" name="Certification type" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 <option>First certification</option>
 <option>Recertification</option>
 </select>
@@ -347,10 +348,11 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="i-notes" style="font-weight: 600; font-size: 15px">Preferred dates and anything else we should know</label>
-<textarea id="i-notes" rows="4" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; box-sizing: border-box; width: 100%; resize: vertical"></textarea>
+<textarea id="i-notes" name="Preferred dates and notes" rows="4" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; box-sizing: border-box; width: 100%; resize: vertical"></textarea>
 </div>
 <button type="submit" style="font: inherit; font-weight: 600; color: #FFFFFF; background: #2350A8; border: 0; padding: 15px 26px; border-radius: 4px; align-self: flex-start; cursor: pointer; min-height: 48px">Send request</button>
-<p class="form-note" style="margin: 0; font-size: 14px; color: #47595C">Clicking Send opens your email app with your request filled in. Just press send. No email app? Write to PrecisionCertifications@gmail.com.</p>
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<p class="form-status" role="status" aria-live="polite" style="margin: 0; font-size: 15px; font-weight: 600"></p>
 </form>
 </div>
 </section>
@@ -369,29 +371,29 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <script>
 (function(){
   var TO="PrecisionCertifications@gmail.com";
+  var ENDPOINT="https://formsubmit.co/ajax/"+TO;
   var y=document.getElementById("yr"); if(y) y.textContent=new Date().getFullYear();
-  function v(id){var e=document.getElementById(id);return e?e.value.trim():"";}
-  function need(ids){var ok=true;ids.forEach(function(id){var e=document.getElementById(id);var bad=!e.value.trim()||(e.type==="email"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e.value.trim()));e.classList.toggle("invalid",bad);if(bad&&ok){e.focus();ok=false;}});return ok;}
-  function send(subject,lines){window.location.href="mailto:"+TO+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\n"));}
-  document.getElementById("group-form").addEventListener("submit",function(e){
-    e.preventDefault();
-    if(!need(["q-name","q-email","q-students"]))return;
-    send("Group Quote Request - "+v("q-program")+" - "+v("q-students")+" students"+(v("q-company")?" - "+v("q-company"):""),[
-      "GROUP TRAINING QUOTE REQUEST","",
-      "Name: "+v("q-name"),"Company: "+v("q-company"),"Email: "+v("q-email"),
-      "Number of students: "+v("q-students"),"Program: "+v("q-program"),"",
-      "Location and preferred dates:",v("q-notes")]);
-  });
-  document.getElementById("individual-form").addEventListener("submit",function(e){
-    e.preventDefault();
-    if(!need(["i-name","i-email"]))return;
-    send("Individual Quote Request - "+v("i-program")+" - "+v("i-type"),[
-      "INDIVIDUAL QUOTE REQUEST","",
-      "Name: "+v("i-name"),"Email: "+v("i-email"),"Phone: "+v("i-phone"),
-      "City and state: "+v("i-location"),"Class: "+v("i-program"),
-      "Certification type: "+v("i-type"),"",
-      "Preferred dates and notes:",v("i-notes")]);
-  });
+  function need(form){var ok=true;form.querySelectorAll("[data-req]").forEach(function(e){var val=e.value.trim();var bad=!val||(e.type==="email"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val));e.classList.toggle("invalid",bad);if(bad&&ok){e.focus();ok=false;}});return ok;}
+  function wire(id,req,subjectFn,kind){
+    var form=document.getElementById(id); if(!form) return;
+    req.forEach(function(r){var e=document.getElementById(r); if(e) e.setAttribute("data-req","");});
+    var btn=form.querySelector("button[type=submit]"), status=form.querySelector(".form-status");
+    form.addEventListener("submit",function(ev){
+      ev.preventDefault();
+      if(!need(form)) return;
+      var data={}; new FormData(form).forEach(function(v,k){data[k]=v;});
+      if(data._honey) return;
+      delete data._honey;
+      data._subject=subjectFn(data); data._template="table"; data["Request type"]=kind;
+      btn.disabled=true; btn.textContent="Sending..."; status.style.color="#47595C"; status.textContent="";
+      fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
+      .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=="true") throw new Error(j.message||"failed");});})
+      .then(function(){form.reset();status.style.color="#1F6F3A";status.textContent="Thank you. Your request was sent, and we will reply by email within one business day.";btn.textContent="Sent";})
+      .catch(function(){status.style.color="#B3261E";status.innerHTML='Sorry, that did not go through. Please email us directly at <a href="mailto:'+TO+'">'+TO+'</a>.';btn.disabled=false;btn.textContent="Send request";});
+    });
+  }
+  wire("group-form",["q-name","q-email","q-students"],function(d){return "Group Quote Request - "+d["Program"]+" - "+d["Number of students"]+" students"+(d["Company"]?" - "+d["Company"]:"");},"Group / company");
+  wire("individual-form",["i-name","i-email"],function(d){return "Individual Quote Request - "+d["Class"]+" - "+d["Certification type"];},"Individual");
 })();
 </script>
 </body>
