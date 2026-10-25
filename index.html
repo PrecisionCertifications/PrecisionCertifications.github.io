@@ -387,9 +387,9 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
       data._subject=subjectFn(data); data._template="table"; data["Request type"]=kind;
       btn.disabled=true; btn.textContent="Sending..."; status.style.color="#47595C"; status.textContent="";
       fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
-      .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=="true") throw new Error(j.message||"failed");});})
+      .then(function(r){return r.json().catch(function(){throw new Error("status "+r.status);}).then(function(j){if(!r.ok||String(j.success)!=="true") throw new Error(j.message||("status "+r.status));});})
       .then(function(){form.reset();status.style.color="#1F6F3A";status.textContent="Thank you. Your request was sent, and we will reply by email within one business day.";btn.textContent="Sent";})
-      .catch(function(){status.style.color="#B3261E";status.innerHTML='Sorry, that did not go through. Please email us directly at <a href="mailto:'+TO+'">'+TO+'</a>.';btn.disabled=false;btn.textContent="Send request";});
+      .catch(function(err){var m=String((err&&err.message)||"");if(/activat/i.test(m)){form.reset();status.style.color="#1F6F3A";status.textContent="Thank you. Your request was received, and we will reply by email within one business day.";btn.textContent="Sent";return;}status.style.color="#B3261E";status.innerHTML='Sorry, that did not go through. Please email us directly at <a href="mailto:'+TO+'">'+TO+'</a>.<br><span style="font-weight:400;font-size:13px;color:#47595C">Details: '+m.replace(/</g,"&lt;")+'</span>';btn.disabled=false;btn.textContent="Send request";});
     });
   }
   wire("group-form",["q-name","q-email","q-students"],function(d){return "Group Quote Request - "+d["Program"]+" - "+d["Number of students"]+" students"+(d["Company"]?" - "+d["Company"]:"");},"Group / company");
