@@ -371,7 +371,8 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <script>
 (function(){
   var TO="PrecisionCertifications@gmail.com";
-  var ENDPOINT="https://formsubmit.co/ajax/"+TO;
+  var W3F_KEY=""; /* Web3Forms access key */
+  var ENDPOINT=W3F_KEY?"https://api.web3forms.com/submit":"https://formsubmit.co/ajax/"+TO;
   var y=document.getElementById("yr"); if(y) y.textContent=new Date().getFullYear();
   function need(form){var ok=true;form.querySelectorAll("[data-req]").forEach(function(e){var val=e.value.trim();var bad=!val||(e.type==="email"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val));e.classList.toggle("invalid",bad);if(bad&&ok){e.focus();ok=false;}});return ok;}
   function wire(id,req,subjectFn,kind){
@@ -384,10 +385,12 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
       var data={}; new FormData(form).forEach(function(v,k){data[k]=v;});
       if(data._honey) return;
       delete data._honey;
-      data._subject=subjectFn(data); data._template="table"; data["Request type"]=kind;
+      data["Request type"]=kind;
+      if(W3F_KEY){data.access_key=W3F_KEY;data.subject=subjectFn(data);data.from_name="Precision Certifications Website";}
+      else{data._subject=subjectFn(data);data._template="table";}
       btn.disabled=true; btn.textContent="Sending..."; status.style.color="#47595C"; status.textContent="";
       fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
-      .then(function(r){return r.json().catch(function(){throw new Error("status "+r.status);}).then(function(j){if(!r.ok||String(j.success)!=="true") throw new Error(j.message||("status "+r.status));});})
+      .then(function(r){return r.json().catch(function(){throw new Error("status "+r.status);}).then(function(j){if(!r.ok||String(j.success)==="false") throw new Error(j.message||("status "+r.status));});})
       .then(function(){form.reset();status.style.color="#1F6F3A";status.textContent="Thank you. Your request was sent, and we will reply by email within one business day.";btn.textContent="Sent";})
       .catch(function(err){var m=String((err&&err.message)||"");if(/activat/i.test(m)){form.reset();status.style.color="#1F6F3A";status.textContent="Thank you. Your request was received, and we will reply by email within one business day.";btn.textContent="Sent";return;}status.style.color="#B3261E";status.innerHTML='Sorry, that did not go through. Please email us directly at <a href="mailto:'+TO+'">'+TO+'</a>.<br><span style="font-weight:400;font-size:13px;color:#47595C">Details: '+m.replace(/</g,"&lt;")+'</span>';btn.disabled=false;btn.textContent="Send request";});
     });
