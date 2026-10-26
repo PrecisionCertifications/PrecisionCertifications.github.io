@@ -248,7 +248,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <form id="group-form" novalidate style="flex: 999 1 480px; min-width: 0; background: #F2F4F1; color: #0A1F44; border-radius: 6px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
 <div style="display: flex; flex-wrap: wrap; gap: 18px">
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<label for="q-name" style="font-weight: 600; font-size: 15px">Your name</label>
+<label for="q-name" style="font-weight: 600; font-size: 15px">Your name <span style="color:#B3261E">*</span></label>
 <input id="q-name" name="Name" type="text" autocomplete="name" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
@@ -258,12 +258,12 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 18px">
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<label for="q-email" style="font-weight: 600; font-size: 15px">Email</label>
+<label for="q-email" style="font-weight: 600; font-size: 15px">Email <span style="color:#B3261E">*</span></label>
 <input id="q-email" name="email" type="email" autocomplete="email" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<label for="q-students" style="font-weight: 600; font-size: 15px">Number of students</label>
-<input id="q-students" name="Number of students" type="number" min="1" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
+<label for="q-students" style="font-weight: 600; font-size: 15px">Number of students <span style="color:#B3261E">*</span></label>
+<input id="q-students" name="Number of students" type="text" inputmode="numeric" placeholder="e.g. 10" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
@@ -305,11 +305,11 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <form id="individual-form" novalidate style="flex: 999 1 480px; min-width: 0; background: #F2F4F1; color: #0A1F44; border: 1px solid #C9D1CC; border-radius: 6px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
 <div style="display: flex; flex-wrap: wrap; gap: 18px">
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<label for="i-name" style="font-weight: 600; font-size: 15px">Your name</label>
+<label for="i-name" style="font-weight: 600; font-size: 15px">Your name <span style="color:#B3261E">*</span></label>
 <input id="i-name" name="Name" type="text" autocomplete="name" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 <div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<label for="i-email" style="font-weight: 600; font-size: 15px">Email</label>
+<label for="i-email" style="font-weight: 600; font-size: 15px">Email <span style="color:#B3261E">*</span></label>
 <input id="i-email" name="email" type="email" autocomplete="email" style="font: inherit; padding: 12px; border: 1px solid #7C8C87; border-radius: 4px; background: #FFFFFF; min-height: 46px; box-sizing: border-box; width: 100%">
 </div>
 </div>
@@ -381,7 +381,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
     var btn=form.querySelector("button[type=submit]"), status=form.querySelector(".form-status");
     form.addEventListener("submit",function(ev){
       ev.preventDefault();
-      if(!need(form)) return;
+      if(!need(form)){status.style.color="#B3261E";status.textContent="Please fill in the fields outlined in red (marked *), then click Send request again.";return;}
       var data={}; new FormData(form).forEach(function(v,k){data[k]=v;});
       if(data._honey) return;
       delete data._honey;
