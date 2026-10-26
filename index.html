@@ -371,7 +371,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <script>
 (function(){
   var TO="PrecisionCertifications@gmail.com";
-  var W3F_KEY=""; /* Web3Forms access key */
+  var W3F_KEY="ef18b494-9f29-4701-a489-edba772217b8"; /* Web3Forms access key */
   var ENDPOINT=W3F_KEY?"https://api.web3forms.com/submit":"https://formsubmit.co/ajax/"+TO;
   var y=document.getElementById("yr"); if(y) y.textContent=new Date().getFullYear();
   function need(form){var ok=true;form.querySelectorAll("[data-req]").forEach(function(e){var val=e.value.trim();var bad=!val||(e.type==="email"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val));e.classList.toggle("invalid",bad);if(bad&&ok){e.focus();ok=false;}});return ok;}
