@@ -24,6 +24,7 @@ html{scroll-behavior:smooth}
 a{color:#0A1F44}a:hover{color:#8A6A1F}
 section[id],div[id]{scroll-margin-top:16px}
 input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset:1px}
+a.choice:hover{border-color:#2350A8 !important;box-shadow:0 4px 14px rgba(10,31,68,.12)}
 .invalid{border-color:#B3261E !important;outline:2px solid #B3261E}
 @media (max-width:600px){header img{height:58px !important}}
 </style>
@@ -44,7 +45,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <a href="#companies" style="text-decoration: none; font-weight: 500; padding: 12px 0">For companies</a>
 <a href="#individuals" style="text-decoration: none; font-weight: 500; padding: 12px 0">For individuals</a>
 <a href="#faq" style="text-decoration: none; font-weight: 500; padding: 12px 0">FAQ</a>
-<a href="#quote" style="text-decoration: none; font-weight: 600; color: #FFFFFF; background: #2350A8; padding: 12px 20px; border-radius: 4px">Request a quote</a>
+<a href="#get-quote" style="text-decoration: none; font-weight: 600; color: #FFFFFF; background: #2350A8; padding: 12px 20px; border-radius: 4px">Request a quote</a>
 </nav>
 </div>
 </header>
@@ -55,7 +56,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <h1 style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-weight: 800; font-size: clamp(38px, 5.2vw, 64px); line-height: 1.04; letter-spacing: -0.02em">IPC certification training, delivered on your production floor.</h1>
 <p style="margin: 0; font-size: 20px; line-height: 1.5; color: #2C4145; max-width: 34em">Precision Certifications and Consulting delivers IPC training and proctors the IPC certification exams for technicians, inspectors and engineers at the Certified IPC Specialist (CIS) level. Every program is taught where your people work.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px">
-<a href="#quote" style="text-decoration: none; font-weight: 600; color: #FFFFFF; background: #2350A8; padding: 15px 26px; border-radius: 4px">Request a quote</a>
+<a href="#get-quote" style="text-decoration: none; font-weight: 600; color: #FFFFFF; background: #2350A8; padding: 15px 26px; border-radius: 4px">Request a quote</a>
 <a href="#programs" style="text-decoration: none; font-weight: 600; color: #0A1F44; border: 1.5px solid #0A1F44; padding: 13.5px 26px; border-radius: 4px">See all programs</a>
 </div>
 </div>
@@ -231,6 +232,29 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2350A8;outline-offset
 <div style="padding: 22px 0; border-top: 1px solid #A9B5AF; border-bottom: 1px solid #A9B5AF; display: flex; flex-direction: column; gap: 8px">
 <h3 style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-weight: 700; font-size: 20px">How much does IPC certification training cost?</h3>
 <p style="margin: 0; color: #2C4145">Pricing depends on the program and group size. Request a quote for an exact figure.</p>
+</div>
+</div>
+</section>
+
+<section id="get-quote" style="background: #F2F4F1; border-top: 1px solid #C9D1CC">
+<div style="max-width: 1120px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 720px">
+<h2 style="margin: 0; font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-weight: 800; font-size: 38px; line-height: 1.1; letter-spacing: -0.015em">Request a quote</h2>
+<p style="margin: 0; color: #2C4145">Who is the training for? Pick one and we will take you to the right form.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<a href="#quote" class="choice" style="flex: 1 1 300px; min-width: 0; text-decoration: none; color: #0A1F44; background: #FFFFFF; border: 1.5px solid #C9D1CC; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A6A1F">For companies</div>
+<div style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.15">Training for my team</div>
+<p style="margin: 0; font-size: 16px; color: #2C4145">On-site group training and certification at your facility, for any number of employees.</p>
+<span style="margin-top: 8px; align-self: flex-start; font-weight: 600; color: #FFFFFF; background: #2350A8; padding: 13px 22px; border-radius: 4px">Group quote &rarr;</span>
+</a>
+<a href="#individual-quote" class="choice" style="flex: 1 1 300px; min-width: 0; text-decoration: none; color: #0A1F44; background: #FFFFFF; border: 1.5px solid #C9D1CC; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A6A1F">For individuals</div>
+<div style="font-family: 'Archivo', 'Helvetica Neue', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.15">Training just for me</div>
+<p style="margin: 0; font-size: 16px; color: #2C4145">Certification or recertification for one technician or inspector, in your own name.</p>
+<span style="margin-top: 8px; align-self: flex-start; font-weight: 600; color: #FFFFFF; background: #2350A8; padding: 13px 22px; border-radius: 4px">Individual quote &rarr;</span>
+</a>
 </div>
 </div>
 </section>
